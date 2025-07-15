@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import translations from './Languages'
+import GameBoard from './GameBoard'
 
 function MainMenu(){
 
@@ -10,7 +11,9 @@ function MainMenu(){
  const [menuOption, setmenuOption] = useState('menu');
 
  const renderMenu = () =>(
+      
     <div className = "menu">
+    <h1>BlackJack</h1>
     <button onClick={() => setmenuOption('play')}>{t.start}</button>
     <button onClick={() => setmenuOption('instructions')}>{t.instructions}</button>
     <button onClick={() => setmenuOption('options')}>{t.options}</button>
@@ -19,7 +22,8 @@ function MainMenu(){
 
   const renderGame = () => (
 <div>
-    
+   <GameBoard/>
+
 </div>
  );
 
