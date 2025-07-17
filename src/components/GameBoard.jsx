@@ -1,17 +1,15 @@
 import React from "react";
 import  '../App.css';
+import cardback from '../assets/cardback.jpg';
 
 function GameBoard(){
     return ( 
-        <div className="dealerhand">
-            <h1>Dealer</h1>
-                <div className="Deck">
-                    <h1>Deck</h1>
-                        <div className="Hand">
-                            <h1>Your Hand</h1>
-                        </div>
-                </div>
-        </div>
+        <body>
+            <div class = "position top-left"></div>
+            <div class = "position top-center"></div>
+            <div class = "position botton-center"></div>
+
+        </body>
     );
 
 }
