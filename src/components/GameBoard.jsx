@@ -4,12 +4,26 @@ import cardback from '../assets/cardback.jpg';
 
 function GameBoard(){
     return ( 
-        <body>
-            <div class = "position top-left"></div>
-            <div class = "position top-center"></div>
-            <div class = "position botton-center"></div>
-
-        </body>
+        <div className="GameBoard">
+       
+                <div className="deck">
+                 <span className="textdeck">Deck</span>
+                 </div>
+                <div className="dealer">
+                    <span className="textdealer">Dealer</span>
+                </div>
+                <div className="null"></div>
+                <div className="null"></div>
+                <div className="null"></div>
+                <div className="null"></div>
+                <div className="stake">
+                    <span className="textstake">Stakes</span>
+                </div>
+                <div className="playerhand">
+                    <span className="textPH">Your Hand</span>
+                </div>
+                <div className="null"></div>
+        </div>
     );
 
 }
