@@ -8,6 +8,8 @@ function GameBoard(){
        
                 <div className="deck">
                  <span className="textdeck">Deck</span>
+                 <img src={cardback} alt= "Cardback" className="cardback"></img>
+                
                  </div>
                 <div className="dealer">
                     <span className="textdealer">Dealer</span>

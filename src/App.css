@@ -149,7 +149,7 @@ h1 {
 
 .textstake{
    position: absolute;
-  top: 570px;
+   top: 520px;
 }
 
 .playerhand{
@@ -169,5 +169,10 @@ h1 {
 
 .textPH{
   position: absolute;
-  top: 570px;
+  top: 520px;
+}
+
+.cardback{
+  width: 200px;
+  height: 300px;
 }
