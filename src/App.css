@@ -85,7 +85,6 @@ h1 {
 
 .position {
   display: flex;
-  height: ;
   justify-content: center;
   align-items: center;
   background: rgba(255,255,255,0.1);
@@ -95,17 +94,55 @@ h1 {
 
 .deck{
  
-  width: 200px;             
+  width: 200px;
   height: 300px;
-  margin-left: 70px;            
-  background-color: rgb(6, 65, 6);  
-  border-radius: 8px;      
-  display: flex;            
-  justify-content:center;
+  border-radius: 8px;
+  background-color: red;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+  background-image:  repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 255) 0,
+    rgba(255, 255, 255, 255) 1px,
+    transparent 1px,
+    transparent 7px
+  ),
+  repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 255) 0,
+    rgba(255, 255, 255, 255) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+  display: flex;
+  justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-weight: bold;
-  color: black;
+}
+.Dcard{
+ 
+  width: 200px;
+  height: 300px;
+  border-radius: 8px;
+  background-color: red;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+  background-image:  repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 255) 0,
+    rgba(255, 255, 255, 255) 1px,
+    transparent 1px,
+    transparent 7px
+  ),
+  repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 255) 0,
+    rgba(255, 255, 255, 255) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+  position: absolute;
+  justify-content: center;
+  align-items: center;
 }
 
 .dealer {
@@ -140,6 +177,7 @@ h1 {
 .textdeck{
   position:absolute;
   top: 10px;
+  color: black;
 }
 
 .textdealer{
@@ -149,7 +187,7 @@ h1 {
 
 .textstake{
    position: absolute;
-   top: 520px;
+   top: 510px;
 }
 
 .playerhand{
@@ -169,10 +207,18 @@ h1 {
 
 .textPH{
   position: absolute;
-  top: 520px;
+  top: 510px;
 }
 
-.cardback{
-  width: 200px;
-  height: 300px;
+.animate-card{
+  transform: translate(28rem , 24rem);
+    transition: 0.1s;
+}
+
+.compare{
+   width: 100px;
+   height: 30px;
+   display: flex;
+   margin-left: 225px;
+   margin-top: 40px;
 }

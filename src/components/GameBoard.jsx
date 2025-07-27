@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import  '../App.css';
-import cardback from '../assets/cardback.jpg';
+import {dealcards, createdeck, round, animatecard } from "./Game.jsx";
+
 
 function GameBoard(){
+
+    
+    const [animation, setAnimation]= useState(false);
+   
+    
+   
     return ( 
         <div className="GameBoard">
-       
-                <div className="deck">
-                 <span className="textdeck">Deck</span>
-                 <img src={cardback} alt= "Cardback" className="cardback"></img>
                 
-                 </div>
+                <div className="deck"></div>
                 <div className="dealer">
                     <span className="textdealer">Dealer</span>
                 </div>
                 <div className="null"></div>
                 <div className="null"></div>
-                <div className="null"></div>
+                <div className="compare">
+                    <button 
+                onClick={() => setAnimation(true)}>Compare</button>
+                </div>
+                
                 <div className="null"></div>
                 <div className="stake">
                     <span className="textstake">Stakes</span>
@@ -24,10 +31,16 @@ function GameBoard(){
                 <div className="playerhand">
                     <span className="textPH">Your Hand</span>
                 </div>
-                <div className="null"></div>
+
+                {animatecard(animation)}
+                
+                
+                
         </div>
+        
     );
 
 }
+
 
 export default GameBoard

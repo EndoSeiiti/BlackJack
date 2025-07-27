@@ -23,8 +23,6 @@ function MainMenu(){
   const renderGame = () => (
 <div>
    <GameBoard/>
-   
-
 </div>
  );
 
