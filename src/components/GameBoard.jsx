@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
 import  '../App.css';
-import {dealcards, createdeck, round, animatecard,showcards,getSuitSymbol } from "./Game.jsx";
+import {dealcards, createdeck, animatecard, getSuitSymbol } from "./Game.jsx";
 
 
 function GameBoard(){
+    const [playerhand, setPlayerHand] = useState([]);
+    const [dealerhand, setDealerHand] = useState([]);
+    const [dealerCover, setDealerCover] = useState()
+    
+    const handledeal=() => {  
+        const deck = createdeck();
+        const  {playerhand, dealerhand} = dealcards(deck);
+        setPlayerHand(playerhand);
+        setDealerHand(dealerhand);
+        setDealerCover(true);
+    };
 
-    
-    
-    const deck = createdeck();
-    const  {playerhand, dealerhand} = dealcards(deck);
-    const [animation, setAnimation]= useState(false);
    
     return ( 
         <div className="GameBoard">
@@ -23,15 +29,18 @@ function GameBoard(){
                     className={`dealercard${i}  ${card.suit === "H" || card.suit === "D" ? "red" : "black"}`}>
                         <span className="num">{card.num}</span>
                         <span className="suit">{getSuitSymbol(card.suit)}</span>
+                        {i === 1 && dealerCover &&
+                        <div className="Dcard"></div>
+                        }
                     </div>
                     ))}
                 </div>
                 <div className="DealCards">
-                    <button onClick = {() => setAnimation(true)}>Deal Cards</button>
+                    <button onClick = {handledeal}>Deal Cards</button>
                 </div>
                 <div className="null"></div>
                 <div className="compare">
-                    <button onClick={() => setAnimation(true)}>Compare</button>
+                    <button onClick={()=> setDealerCover(false)}>Compare</button>
                 </div>
                 
                 <div className="null"></div>
@@ -50,7 +59,7 @@ function GameBoard(){
                     ))}
                 </div>
 
-                {animatecard(animation)}
+               
                 
                 
                 
