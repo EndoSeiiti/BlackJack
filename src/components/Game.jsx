@@ -46,8 +46,46 @@ export function round(){
 }
 
 export function animatecard(animation){
-    return <div className={`Dcard ${animation ? "animate-card":""}`}> </div>;
+    return <div className={`Dcard ${animation ? "animate-card ":""}`}> </div>;
 }
 
+
+export function getSuitSymbol(suit) {
+  switch (suit) {
+    case "H": return "♥";
+    case "D": return "♦";
+    case "S": return "♠";
+    case "C": return "♣";
+    default: return "?";
+  }
+}
+
+export function showcards(dealerhand, playerhand){
+
+    const DealerSorted = dealerhand.map ((card,i)=>(
+        <div
+         key={i} 
+         className={`dealercard${i}  ${card.suit === "H" || card.suit === "D" ? "red" : "black"}`}>
+            {card.num}
+         </div>
+        ))
+
+    const PlayerSorted = playerhand.map ((card,i)=>(
+        <div
+         key={i} 
+         className={`playercard${i}  ${card.suit === "H" || card.suit === "D" ? "red" : "black"}`}>
+            {card.num}
+         </div>
+        ))
+
+   
+    return (
+    <div>
+        {DealerSorted}
+        {PlayerSorted}
+    </div>
+    );
+   
+}
 
 

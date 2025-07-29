@@ -187,7 +187,7 @@ h1 {
 
 .textstake{
    position: absolute;
-   top: 510px;
+   top: 500px;
 }
 
 .playerhand{
@@ -207,11 +207,26 @@ h1 {
 
 .textPH{
   position: absolute;
-  top: 510px;
+  top: 500px;
 }
 
 .animate-card{
-  transform: translate(28rem , 24rem);
+  transform: translate(27.8rem , 30.5rem);
+    transition: 0.1s;
+}
+
+.animate-card2{
+  transform: translate(28.8rem , 30.5rem);
+    transition: 0.1s;
+}
+
+.animate-card3{
+  transform: translate(29.8rem , 30.5rem);
+    transition: 0.1s;
+}
+
+.animate-card4{
+  transform: translate(30.8rem , 30.5rem);
     transition: 0.1s;
 }
 
@@ -222,3 +237,78 @@ h1 {
    margin-left: 225px;
    margin-top: 40px;
 }
+
+.DealCards {
+  display: flex;
+  width: 100px;
+  height: 30px;
+  margin-top: 140px;
+  margin-left: 225px;
+}
+.playercard0 {
+
+  width: 200px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 20px;
+  display: flex;
+ 
+}
+
+.playercard1 {
+
+  width: 200px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 20px;
+  display: flex;
+  
+}
+
+.dealercard0 {
+
+  width: 200px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 20px;
+  display: flex;
+  
+}
+
+.dealercard1 {
+
+  width: 200px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 20px;
+  display: flex;
+ 
+}
+.red{
+  color: red;
+}
+
+.black{
+  color: black;
+}
+
+.num {
+  font-weight: bold;
+ margin-top: 110px;
+ margin-left: 80px;
+ font-size: 50px;
+  }
+
+.suit{
+   
+    margin-left: -100px;
+    font-size: 50px;
+  }
