@@ -36,17 +36,15 @@ function GameBoard(){
                     ))}
                 </div>
                 <div className="DealCards">
-                    <button onClick = {handledeal}>Deal Cards</button>
+                    <button onClick = {handledeal}>DEAL CARDS</button>
                 </div>
                 <div className="null"></div>
-                <div className="compare">
-                    <button onClick={()=> setDealerCover(false)}>Compare</button>
+                <div className="Stand">
+                    <button onClick={()=> setDealerCover(false)}>STAND</button>
                 </div>
                 
                 <div className="null"></div>
-                <div className="stake">
-                    <span className="textstake">Stakes</span>
-                </div>
+                <div className="null"></div>
                 <div className="playerhand">
                     <span className="textPH">Your Hand</span>
                     {playerhand.map ((card,i)=>(
@@ -56,7 +54,10 @@ function GameBoard(){
                         <span className="num">{card.num}</span>
                         <span className="suit">{getSuitSymbol(card.suit)}</span>
                     </div>
-                    ))}
+                  ))}
+                </div>
+                <div className="hit">
+                    <button onClick={()=> setDealerCover(false)}>HIT</button>
                 </div>
 
                
