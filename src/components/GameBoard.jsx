@@ -9,6 +9,10 @@ function GameBoard(){
     const [dealerCover, setDealerCover] = useState();
     const [deck, setDeck] = useState ();
     const [standmessage, setStandMessage] = useState("");
+    const [canclick, setCanClick] = useState(true);
+    const [canclickhit, setCanClickhit] = useState(false);
+    const [score, setScore] = useState(0);
+    const [gethighscore, sethighscore] = useState(0);
     
     const handledeal=() => {  
         const deck = createdeck();
@@ -21,20 +25,30 @@ function GameBoard(){
     };
 
     const handlehit= () => {
+        
          const i = Math.floor(Math.random() * deck.length);
          const [card] = deck.splice(i, 1);
-        setPlayerHand(prev =>[...prev, card])
-        setDeck([...deck])
-
+         
+         const newhand = [...playerhand, card]
+        
+            
+        setPlayerHand(newhand);
+        setDeck([...deck]);
+        const  playerscore = getCardValue(newhand);
+        if (playerscore > 21) setStandMessage("You busted!"),  
+        setCanClickhit(false), 
+        setCanClick(true), 
+        setScore(0);
     }
 
     const handlestand = (playerhand,dealerhand) => {
         const  playerscore = getCardValue(playerhand);
         const dealerscore = getCardValue2(dealerhand);
 
-        if (playerscore > 21) setStandMessage("You busted!");
-        else if (playerscore > dealerscore) setStandMessage ("You Win!");
-        else if (dealerscore > playerscore) setStandMessage ("You Lose!");
+        
+        if (playerscore > dealerscore){ setStandMessage ("You Win!"), setScore(prev => prev + 1);
+            if (score > gethighscore)  {sethighscore (score+1 )};} 
+        else if (dealerscore > playerscore) setStandMessage ("You Lose!"),setScore(0);
         else setStandMessage ("It's a Tie!");
         
     }
@@ -62,20 +76,32 @@ function GameBoard(){
                     ))}
                 </div>
                 <div className="DealCards">
-                    <button onClick = {handledeal}>DEAL CARDS</button>
+                    <button disabled = {!canclick} onClick = {()=>{
+                        handledeal();
+                        setCanClick(false);
+                        setCanClickhit(true);
+                        setStandMessage("")
+                    }}
+                       >DEAL CARDS</button>
                 </div>
                 <div className="null"></div>
                 <div className="Stand">
-                    <button onClick={()=> {setDealerCover(false)
+                    <button disabled={canclick} onClick={()=> {setDealerCover(false);
                          handlestand(playerhand, dealerhand);
-                    
+                         setCanClick(true);
+                         setCanClickhit(false);
                          }}>STAND</button>
                          
                 </div>
                 {standmessage && <div className="message" >{standmessage}</div>}
                 <div className="null">
                 </div>
-                <div className="null"></div>
+                <div className="record">
+                    <span className="highscore">High Score</span>
+                    <span className="highnumber">{gethighscore}</span>
+                    <span className="score">{score}</span>
+                    
+                </div>
                 <div className="playerhand">
                     <span className="textPH">Your Hand</span>
                     {playerhand.map ((card,i)=>(
@@ -88,15 +114,12 @@ function GameBoard(){
                   ))}
                 </div>
                 <div className="hit">
-                    <button onClick={handlehit}>HIT</button>
-                    
+                    <button disabled = {!canclickhit} onClick={handlehit}>HIT</button>
                 </div>
-
                 </div>
         
     );
 
 }
-
 
 export default GameBoard
