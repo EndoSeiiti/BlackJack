@@ -247,7 +247,7 @@ h1 {
    padding-left: 26px;
    
 }
-.playercard0 {
+.playercard{
 
   width: 200px;
   height: 300px;
@@ -259,17 +259,6 @@ h1 {
  
 }
 
-.playercard1 {
-
-  width: 200px;
-  height: 300px;
-  border: 2px solid black;
-  border-radius: 8px;
-  background-color: white;
-  font-size: 20px;
-  display: flex;
-  
-}
 
 .dealercard0 {
 
@@ -313,4 +302,13 @@ h1 {
    
     margin-left: -100px;
     font-size: 50px;
+  }
+
+  .message{
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    padding-left: 550px;
+    padding-top: 300px;
+    color: #fff;
   }
