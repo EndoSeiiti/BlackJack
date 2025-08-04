@@ -14,7 +14,12 @@ const translations = {
     highscore:"High Score",
     dealcards:"Deal Cards",
     hit:"Hit",
-    stand:"Stand"
+    stand:"Stand",
+    win:"You Win!",
+    lose:"You Lose!",
+    tie:"I'ts a Tie!",
+    busted:"You Busted"
+
 
 
     },
@@ -33,7 +38,11 @@ const translations = {
     highscore: "Recórde",
     dealcards:"Distribuir Cartas",
     hit:"Pedir Carta",
-    stand:"Parar"
+    stand:"Parar",
+    win:"Vitória!",
+    lose:"Derrota!",
+    tie:"Empate!",
+    busted:"Estourou!"
 
 
     },

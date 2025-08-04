@@ -38,7 +38,7 @@ function GameBoard({language}){
         setPlayerHand(newhand);
         setDeck([...deck]);
         const  playerscore = getCardValue(newhand);
-        if (playerscore > 21) setStandMessage("You busted!"),  
+        if (playerscore > 21) setStandMessage(t.busted),  
         setCanClickhit(false), 
         setCanClick(true), 
         setScore(0);
@@ -49,10 +49,10 @@ function GameBoard({language}){
         const dealerscore = getCardValue2(dealerhand);
 
         
-        if (playerscore > dealerscore){ setStandMessage ("You Win!"), setScore(score => score + 1);
+        if (playerscore > dealerscore){ setStandMessage (t.win), setScore(score => score + 1);
             if (score >= gethighscore)  {sethighscore (gethighscore+1 )};} 
-        else if (dealerscore > playerscore) setStandMessage ("You Lose!"),setScore(0);
-        else setStandMessage ("It's a Tie!");
+        else if (dealerscore > playerscore) setStandMessage (t.lose),setScore(0);
+        else setStandMessage (t.tie);
         
     }
 
