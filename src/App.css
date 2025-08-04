@@ -81,6 +81,7 @@ h1 {
   grid-template-rows:1fr 0.5fr 1fr;
   gap: 5px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .position {
@@ -192,28 +193,9 @@ h1 {
 
 .textPH{
   position: absolute;
-  top: 500px;
+  top: 610px;
 }
 
-.animate-card{
-  transform: translate(27.8rem , 30.5rem);
-    transition: 0.1s;
-}
-
-.animate-card2{
-  transform: translate(28.8rem , 30.5rem);
-    transition: 0.1s;
-}
-
-.animate-card3{
-  transform: translate(29.8rem , 30.5rem);
-    transition: 0.1s;
-}
-
-.animate-card4{
-  transform: translate(30.8rem , 30.5rem);
-    transition: 0.1s;
-}
 
 .Stand button{
    width: 200px;
@@ -222,7 +204,8 @@ h1 {
    margin-left: 300px;
    margin-top: 40px;
    font-size: 50px;
-   padding-left: 22px;
+   padding-left: 28px;
+   white-space: nowrap;
 }
 
 
@@ -231,9 +214,12 @@ h1 {
   width: 200px;
   height: 50px;
   margin-top: 140px;
+  margin-left:-30px;
   font-size: 30px;
   padding-left: 10px;
   padding-top: 5px;
+  white-space: nowrap;
+  width: max-content;
 
 }
 
@@ -241,10 +227,12 @@ h1 {
    width: 100px;
    height: 40px;
    display: flex;
-   margin-left:50px ;
+   margin-left:20px ;
    margin-top: 150px;
    font-size: 30px;
-   padding-left: 26px;
+
+   white-space: nowrap;
+   width: max-content;
    
 }
 .playercard{
@@ -326,7 +314,7 @@ h1 {
     color: black;
     font-weight: bold;
     position: absolute;
-    padding-top: 100px;
+    padding-top: 140px;
 
   }
 
@@ -336,4 +324,16 @@ h1 {
     font-weight: bold;
     position: absolute;
     padding-top: 50px;
+  }
+
+  .currentS{
+      font-size: 20px;
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    padding-top: 90px;
+  }
+  
+  .record{
+    padding-right: 90px;
   }

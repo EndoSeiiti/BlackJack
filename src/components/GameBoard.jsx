@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import  '../App.css';
 import {dealcards, createdeck, getSuitSymbol, getCardValue, getCardValue2 } from "./Game.jsx";
+import translations from './Languages'
 
-
-function GameBoard(){
+function GameBoard({language}){
     const [playerhand, setPlayerHand] = useState([]);
     const [dealerhand, setDealerHand] = useState([]);
     const [dealerCover, setDealerCover] = useState();
@@ -13,6 +13,9 @@ function GameBoard(){
     const [canclickhit, setCanClickhit] = useState(false);
     const [score, setScore] = useState(0);
     const [gethighscore, sethighscore] = useState(0);
+    
+    const t = translations[language];
+
     
     const handledeal=() => {  
         const deck = createdeck();
@@ -46,8 +49,8 @@ function GameBoard(){
         const dealerscore = getCardValue2(dealerhand);
 
         
-        if (playerscore > dealerscore){ setStandMessage ("You Win!"), setScore(prev => prev + 1);
-            if (score > gethighscore)  {sethighscore (score+1 )};} 
+        if (playerscore > dealerscore){ setStandMessage ("You Win!"), setScore(score => score + 1);
+            if (score >= gethighscore)  {sethighscore (gethighscore+1 )};} 
         else if (dealerscore > playerscore) setStandMessage ("You Lose!"),setScore(0);
         else setStandMessage ("It's a Tie!");
         
@@ -82,7 +85,7 @@ function GameBoard(){
                         setCanClickhit(true);
                         setStandMessage("")
                     }}
-                       >DEAL CARDS</button>
+                       >{t.dealcards}</button>
                 </div>
                 <div className="null"></div>
                 <div className="Stand">
@@ -90,20 +93,21 @@ function GameBoard(){
                          handlestand(playerhand, dealerhand);
                          setCanClick(true);
                          setCanClickhit(false);
-                         }}>STAND</button>
+                         }}>{t.stand}</button>
                          
                 </div>
                 {standmessage && <div className="message" >{standmessage}</div>}
                 <div className="null">
                 </div>
                 <div className="record">
-                    <span className="highscore">High Score</span>
+                    <span className="highscore">{t.highscore}</span>
                     <span className="highnumber">{gethighscore}</span>
+                    <span className="currentS">{t.score}</span>
                     <span className="score">{score}</span>
                     
                 </div>
                 <div className="playerhand">
-                    <span className="textPH">Your Hand</span>
+                    <span className="textPH">{t.hand}</span>
                     {playerhand.map ((card,i)=>(
                     <div
                     key={i} 
@@ -114,7 +118,7 @@ function GameBoard(){
                   ))}
                 </div>
                 <div className="hit">
-                    <button disabled = {!canclickhit} onClick={handlehit}>HIT</button>
+                    <button disabled = {!canclickhit} onClick={handlehit}>{t.hit}</button>
                 </div>
                 </div>
         

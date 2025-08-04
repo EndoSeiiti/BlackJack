@@ -22,7 +22,7 @@ function MainMenu(){
 
   const renderGame = () => (
 <div>
-   <GameBoard/>
+   <GameBoard language = {language}/>
 </div>
  );
 
